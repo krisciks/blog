@@ -1,26 +1,30 @@
 <?php
+
 require_once "functions.php";
+require_once "Database.php";
+$config = require "config.php";
 
 
-$dsn = "mysql:host=localhost;user=root;dbname=blog;charset=utf8mb4";
+$db = new Database($config["database"]);
+$sql_query = "SELECT * FROM posts";
+$params = [];
+if(isset($_GET["search_query"]) && trim($_GET["search_query"]) != "") { $sql_query .= " WHERE content LIKE :search";
 
-$pdo = new PDO($dsn);
-var_dump($pdo);
+$params["search"] = "%" . $_GET["search_query"] . "%";}
+$posts = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
 
+echo "<h1> BLOG </h1>";
+echo "<form>";
+    echo "<input name='search_query' />";
+    echo "<button>Meklēt</button>";
+echo "</form>";
 
-// ... Savienošanās ar datu bāzi ...
-
-$statement = $pdo->prepare("SELECT * FROM posts");
-$statement->execute();
-
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 echo "<ul>";
-    // Te būs cikls
     foreach($posts as $post) {
-        // Te izvadīs katru ierakstu
         echo "<li>" . $post["content"] . "</li>";
     }
 echo "</ul>";
+
 
 
 
