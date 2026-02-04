@@ -1,6 +1,6 @@
-CREATE DATABASE blog;
+CREATE DATABASE blog_kg;
 
-USE blog;
+USE blog_kg;
 
 CREATE TABLE posts(
 ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -15,3 +15,13 @@ VALUES
 ("Otrais bloga ieraksts");
 
 
+CREATE TABLE categories (
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+category_name VARCHAR(25) NOT NULL);
+
+INSERT INTO categories
+(category_name)
+VALUES
+("Svētki"),
+("Mūzika"),
+("Sports");
