@@ -1,7 +1,7 @@
 <?php require "components/header.php"; ?>
 <?php require "components/navbar.php"; ?>
 
-<h1> BLOG </h1>
+<h1 class="virsraksts"> BLOG </h1>
 <form>
     <input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>' />    
     <button>Meklēt</button>
@@ -20,6 +20,4 @@ else { ?>
     </ul>
         <?php } ?>
     
-
-</body>
-</html>
+<?php require "components/footer.php"; ?>
