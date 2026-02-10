@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "Emuārs - kategorijas";
+
 
 require_once "functions.php";
 require_once "Database.php";

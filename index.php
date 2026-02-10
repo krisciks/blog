@@ -1,4 +1,5 @@
 <?php
+$pageTitle = "Emuārs";
 
 require_once "functions.php";
 require_once "Database.php";
