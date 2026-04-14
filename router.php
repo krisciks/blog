@@ -2,17 +2,12 @@
 
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
-if ($uri === '/') {
-    require 'controllers/index.php';
+$routes = require("routes.php");
 
-} elseif ($uri === '/about') {
-    require 'controllers/story.php';
-
-} elseif ($uri === '/categories') {
-    require 'controllers/categories.php';
-
+if(array_key_exists($uri, $routes)) {
+    require $routes[$uri];
 } else {
     http_response_code(404);
-    echo "<p>Atvainojiet, lapa netika atrasta!</p>";
+    require "controllers/404.php";
     die();
 }
