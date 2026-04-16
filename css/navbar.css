@@ -1,0 +1,21 @@
+.nav1{
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navigacija{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 250px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin: 0px;
+    color: black;
+    background-color: lightgray;
+    margin-bottom: 30px;
+}
+
+body{
+    margin: 0px;
+}

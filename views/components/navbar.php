@@ -1,11 +1,11 @@
+<link rel="stylesheet" href="css/navbar.css">
 
-    
 <header>
     <nav>
-        <ul>
-            <li><a href="/">Emuāra ieraksti</a></li>
-            <li><a href="/categories">Kategorijas</a></li>
-            <li><a href="/about">Par mums</a></li>
+        <ul class="navigacija">
+            <a class="nav1" href="/">Emuāra ieraksti</a>
+            <a class="nav1" href="/categories">Kategorijas</a>
+            <a class="nav1" href="/about">Par mums</a>
         </ul>
     </nav>
 </header>
